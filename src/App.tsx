@@ -7,7 +7,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CountDownPage />} />
-          <Route path="/birthday" element={<BirthdayPage />} />
+          <Route path="/happy-birthday" element={<BirthdayPage />} />
         </Routes>
       </BrowserRouter>
   );
