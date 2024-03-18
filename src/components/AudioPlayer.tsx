@@ -1,4 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import { FaPlay, FaPause } from "react-icons/fa6";
 
 const AudioPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -36,9 +38,13 @@ const AudioPlayer = () => {
     return (
         <div>
             <audio ref={audioRef} src="/감자튀김%20옴뇸뇸.m4a" loop muted={isMuted}></audio>
-            <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-            <button onClick={toggleMute}>{isMuted ? 'Unmute' : 'Mute'}</button>
-            <div className="hidden md:block"> {/* 데스크탑 환경에서만 볼륨 조절 UI 표시 */}
+            <button onClick={togglePlayPause}>
+                {isPlaying ? <FaPause /> : <FaPlay />}
+            </button>
+            <button onClick={toggleMute}>
+                {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+            </button>
+            <div className="hidden md:block">
                 <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
             </div>
         </div>
