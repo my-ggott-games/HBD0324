@@ -43,9 +43,13 @@ const CountDownPage = () => {
     const timeLeft = calculateTimeLeft();
 
     return (
-        <div>
-            <p className="font-pyeongchang-bold">2024년 3월 24일까지 얼마나 남았냐면요...</p>
-            <p className="font-pyeongchang-light text-center">{timeLeft.daysLeft} 일 {timeLeft.hoursLeft} 시간 {timeLeft.minutesLeft} 분 {timeLeft.secondsLeft} 초</p>
+        <div className="w-screen flex flex-col justify-center items-center mx-auto text-center gap-4">
+            <p className="font-pyeongchang-bold text-5xl">
+                2024년<br/>
+                3월 24일까지<br/>
+                앞으로
+            </p>
+            <p className="font-pyeongchang-light text-2xl">{timeLeft.daysLeft} 일 {timeLeft.hoursLeft} 시간 {timeLeft.minutesLeft} 분 {timeLeft.secondsLeft} 초</p>
             <button onClick={skipTimeLeft}>Skip!</button>
         </div>
     );

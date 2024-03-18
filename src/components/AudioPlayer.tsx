@@ -36,17 +36,18 @@ const AudioPlayer = () => {
     };
 
     return (
-        <div>
+        <div className="flex items-center">
             <audio ref={audioRef} src="/감자튀김%20옴뇸뇸.m4a" loop muted={isMuted}></audio>
             <button onClick={togglePlayPause}>
-                {isPlaying ? <FaPause /> : <FaPlay />}
-            </button>
-            <button onClick={toggleMute}>
-                {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                {isPlaying ? <FaPause/> : <FaPlay/>}
             </button>
             <div className="hidden md:block">
-                <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
+                <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange}/>
             </div>
+            <button onClick={toggleMute}>
+                {isMuted ? <FaVolumeMute/> : <FaVolumeUp/>}
+            </button>
+
         </div>
     );
 };
