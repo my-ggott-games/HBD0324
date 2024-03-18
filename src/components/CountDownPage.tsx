@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TimeLeft } from '../types/TimeLeft';
 
-const BIRTHDAY = new Date('2024-03-24').getTime();
+const BIRTHDAY = new Date('2024-03-23T15:00:00Z').getTime();
 
 const CountDownPage = () => {
     const navigate = useNavigate();
