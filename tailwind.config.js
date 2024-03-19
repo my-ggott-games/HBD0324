@@ -10,6 +10,9 @@ export default {
         'pyeongchang-bold': ['PyeongChangPeace-Bold', 'sans-serif'],
         'pyeongchang-light': ['PyeongChangPeace-Light', 'sans-serif'],
       },
+      colors: {
+        periwinkle: '#CCCCFF',
+      },
     },
   },
   plugins: [],
