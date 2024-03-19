@@ -12,7 +12,9 @@ function BirthdayPage() {
     };
 
     const onShoot = () => {
-        controller.current.shoot();
+        if (controller.current) {
+            controller.current.shoot();
+        }
     };
 
     useEffect(() => {
