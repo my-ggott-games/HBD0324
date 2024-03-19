@@ -1,7 +1,7 @@
 
 const BirthdayCake = () => {
     return (
-        <div className="sketchfab-embed-wrapper w-full aspect-video">
+        <div className="sketchfab-embed-wrapper w-full aspect-video md:w-1/2 md:h-1/2">
             <iframe
                 className="w-full h-full"
                 title="Desserts and cakes"
