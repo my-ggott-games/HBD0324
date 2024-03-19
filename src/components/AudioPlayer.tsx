@@ -38,19 +38,19 @@ const AudioPlayer = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-4">
             <p className="text-sm font-pyeongchang-light">
                 {hasPlayed ? <><br/>헤헤 🥰</> : (
                     <>
-                        아이폰으로 하나하나 편집해서 브금 만들어왔는데~~
+                        아이폰으로 하나하나 편집해서 브금 만들었는데~~
                         <br/>아나따가 들어줬음 좋게따~~ 🥺
                     </>
                 )}
             </p>
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
                 <audio ref={audioRef} src="/감자튀김%20옴뇸뇸.m4a" loop muted={isMuted}></audio>
 
-                <button onClick={togglePlayPause}>
+                <button className="focus:outline-none" onClick={togglePlayPause}>
                     {isPlaying ? <FaPause/> : <FaPlay/>}
                 </button>
                 <div className="hidden md:block">

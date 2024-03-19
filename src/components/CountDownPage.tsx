@@ -43,14 +43,14 @@ const CountDownPage = () => {
     const timeLeft = calculateTimeLeft();
 
     return (
-        <div className="w-screen bg-white flex flex-col justify-center items-center mx-auto text-center select-none gap-4">
+        <div className="w-screen bg-white flex flex-col justify-center items-center mx-auto py-8 text-center select-none gap-4">
             <p className="text-5xl font-pyeongchang-bold">
                 2024년<br/>
                 3월 24일까지<br/>
                 앞으로
             </p>
             <p className="font-pyeongchang-light text-2xl">{timeLeft.daysLeft} 일 {timeLeft.hoursLeft} 시간 {timeLeft.minutesLeft} 분 {timeLeft.secondsLeft} 초</p>
-            <button onClick={skipTimeLeft}>Skip!</button>
+            <button className="focus:outline-none" onClick={skipTimeLeft}>Skip!</button>
         </div>
     );
 };

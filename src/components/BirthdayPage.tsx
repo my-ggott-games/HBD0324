@@ -22,15 +22,18 @@ function BirthdayPage() {
     }, []);
 
     return (
-        <div className="w-screen bg-white flex flex-col justify-center items-center mx-auto text-center select-none gap-4">
+        <div className="w-screen bg-white flex flex-col justify-center items-center mx-auto py-8 text-center select-none gap-4">
             <Fireworks onInit={onInitHandler}/>
-            <button className="font-pyeongchang-light" onClick={onShoot}>폭죽쏘기</button>
+            <button className="p-4 rounded-full shadow-lg absolute bottom-5 right-5 font-pyeongchang-light focus:outline-none"
+                    onClick={onShoot}>🎉
+            </button>
             <p className="text-3xl font-pyeongchang-bold">Happy Birthday!</p>
             <p className="text-xl font-pyeongchang-light">나의 별은 너였고, 지금도, 앞으로도,
                 <br/>변함없이 너야.
             </p>
             <BirthdayCake/>
             <AudioPlayer/>
+
         </div>
     );
 }
