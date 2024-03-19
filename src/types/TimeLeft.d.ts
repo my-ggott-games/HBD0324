@@ -1,6 +1,6 @@
 export interface TimeLeft {
-    daysLeft: number;
-    hoursLeft: number;
-    minutesLeft: number;
-    secondsLeft: number;
+    daysLeft: number | string;
+    hoursLeft: number | string;
+    minutesLeft: number | string;
+    secondsLeft: number | string;
 }

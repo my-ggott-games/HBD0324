@@ -10,21 +10,25 @@ const CountDownPage = () => {
     const [remainingSeconds, setRemainingSeconds] = useState(() => Math.floor((BIRTHDAY - new Date().getTime()) / 1000));
 
     const calculateTimeLeft = (): TimeLeft => {
-        const seconds = remainingSeconds % 60;
-        const minutes = Math.floor(remainingSeconds / 60) % 60;
-        const hours = Math.floor(remainingSeconds / 3600) % 24;
-        const days = Math.floor(remainingSeconds / (3600 * 24));
+        const totalSeconds = Math.abs(remainingSeconds); // 음수 시간도 처리
+        const seconds = totalSeconds % 60;
+        const minutes = Math.floor(totalSeconds / 60) % 60;
+        const hours = Math.floor(totalSeconds / 3600) % 24;
+        const days = Math.floor(totalSeconds / (3600 * 24));
+
+        // 음수인 경우 '-' 표시를 추가
+        const sign = remainingSeconds < 0 ? "-" : "";
 
         return {
-            daysLeft: days,
-            hoursLeft: hours,
-            minutesLeft: minutes,
-            secondsLeft: seconds,
+            daysLeft: sign + days,
+            hoursLeft: sign + hours,
+            minutesLeft: sign + minutes,
+            secondsLeft: sign + seconds,
         };
     };
 
     useEffect(() => {
-        if (remainingSeconds <= 0) {
+        if (remainingSeconds == 0) {
             navigate('/happy-birthday');
             return;
         }
@@ -50,7 +54,7 @@ const CountDownPage = () => {
                 앞으로
             </p>
             <p className="font-pyeongchang-light text-2xl">{timeLeft.daysLeft} 일 {timeLeft.hoursLeft} 시간 {timeLeft.minutesLeft} 분 {timeLeft.secondsLeft} 초</p>
-            <button className="focus:outline-none" onClick={skipTimeLeft}>Skip!</button>
+            <button className="font-pyeongchang-light focus:outline-none" onClick={skipTimeLeft}>생일 3초 전</button>
         </div>
     );
 };
