@@ -43,7 +43,7 @@ const CountDownPage = () => {
     const timeLeft = calculateTimeLeft();
 
     return (
-        <div className="w-screen flex flex-col justify-center items-center mx-auto text-center gap-4">
+        <div className="w-screen flex flex-col justify-center items-center mx-auto text-center select-none gap-4">
             <p className="font-pyeongchang-bold text-5xl">
                 2024년<br/>
                 3월 24일까지<br/>
