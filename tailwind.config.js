@@ -5,8 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'pyeongchang-bold': ['PyeongChangPeace-Bold', 'sans-serif'],
+        'pyeongchang-light': ['PyeongChangPeace-Light', 'sans-serif'],
+      },
+      colors: {
+        periwinkle: '#CCCCFF',
+      },
+    },
   },
   plugins: [],
 }
-
